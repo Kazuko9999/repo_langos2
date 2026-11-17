@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Étlap</title>
+    <style>
+        *{
+    margin: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+    min-height: 100vh;
+}
+header {
+    display: flex;  
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(165, 162, 162, 0.75);;
+}
+.logo-tarolo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-tarolo img {
+    height: 60px;
+    width: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.logo {
+    height: 70px;
+    width: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    text-decoration: none;
+}
+nav button {
+background-color: #d97706;
+    color: white;
+    padding: 10px 22px;
+    border-radius: 10px;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+nav button:hover {
+    background-color: #ac5e06;
+}
+
+.aktiv-gomb {
+    background-color: #b45309;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+.rolunk-szekcui {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 80px;
+}   
+
+.szoveg-kartya {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 40px;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.5)
+}
+
+.szoveg-kartya h1 {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.kiemelt-szlogen {
+    font-size: 18px;
+    font-style: italic;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+
+.szoveg-kartya p {
+    font-size: 17px;
+    margin-bottom: 15px;
+}
+
+.nyitvatartas-doboz {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 2px dashed;
+}
+
+.nyitvatartas-doboz h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.nyitvatartas-lista {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nyitvatartas-lista li {
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+.keppek {
+    display: flex;
+    gap: 20px;
+    height: 450px;
+}
+.etel-kep {
+    width: 50%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 4px solid;
+}
+
+.kep-fent {
+    align-self: flex-start;
+}
+
+.kep-lent {
+    align-self: flex-end;
+}
+.feliratkozas-szekcio {
+    display: flex;
+    justify-content: center;
+}
+
+.feliratkozas-kartya {
+    width: 100%;
+    max-width: 700px;
+    text-align: center; 
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 35px;
+    border-radius: 10px;
+    margin-left: 200px;
+}
+
+.feliratkozas-kartya h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.feliratkozas-kartya p {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.feliratkozasi-menu {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.feliratkozasi-menu input {
+    padding: 12px 20px;
+    width: 60%;
+    border: 2px solid;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+}
+
+.feliratkozasi-menu button {
+    background-color: #ac5e06;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.feliratkozasi-menu button:hover {
+    background-color: #b45309;
+}
+
+.menu-szekcio {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.menu-cim-doboz {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 30px;
+    border-radius: 25px;
+    text-align: center;
+}
+
+.menu-cim-doboz h1 {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.menu-cim-doboz p {
+    font-size: 17px;
+}
+
+.etlap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.etel-kartya {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 25px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.etel-kartya h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.etel-leiras {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.etel-ar {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+@media (max-width: 850px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 20px;
+    }
+    .rolunk-szekcio {
+        flex-direction: column;
+    }
+    .kepek-oszlop {
+        height: auto;
+        width: 100%;
+    }
+    .etel-kep {
+        height: 250px;
+    }
+}
+    </style>
+</head>
+<body>
+    
+    <header>
+        <div class="logo-tarolo">
+            <a href="fő_oldal.htm">
+                <img src="nizNcPGc.jpg" alt="Mentes Falat logó" title="Mentes Falat" class="logo">
+            </a>
+        </div>
+        <nav>
+            <a href="menu.html"><button id="Menu" class="aktiv-gomb">Menü</button></a>
+            <a href="index.html#rolunk"><button id="Rolunk">Rólunk</button></a>
+            <a href="index.html#feliratkozas"><button id="Feliratkozas">Feliratkozás</button></a>
+        </nav>
+    </header>
+
+   <main>
+        <section class="menu-szekcio">
+            <div class="menu-cim-doboz">
+                <h1>Menü & Árak</h1>
+                <p></p>
+            </div>
+
+            <div class="etlap-grid">
+                
+                <div class="etel-kartya">
+                    <h3>Gyerek Menü</h3>
+                    <p class="etel-leiras">Mini lángos, juhtúrós mentes krém és egy finom ital</p>
+                    <span class="etel-ar">2 500 Ft</span>
+                </div>
+
+                <div class="etel-kartya">
+                    <h3>Kis Menü</h3>
+                    <p class="etel-leiras">Ideális választás egy kisebb adag finomsághoz.</p>
+                    <span class="etel-ar">3 000 Ft</span>
+                </div>
+
+                <div class="etel-kartya">
+                    <h3>Közepes Menü</h3>
+                    <p class="etel-leiras">A tökéletes egyensúly az éhség csillapítására.</p>
+                    <span class="etel-ar">3 500 Ft</span>
+                </div>
+
+                    <div class="etel-kartya">
+                    <h3>Nagy Menü</h3>
+                    <p class="etel-leiras">Bőséges adag a maximális lángos élményért!</p>
+                    <span class="etel-ar">4 500 Ft</span>
+                </div>
+
+            </div>
+
+            <div class="menu-cim-doboz" style="margin-top: 30px;">
+                <h3>Rendelés & Információ</h3>
+                <p><strong>Elérhetőség (Rendelés):</strong> 06 06 06 06</p>
+            </div>
+        </section>
+    </main>
+
+</body>
+
+</html>
